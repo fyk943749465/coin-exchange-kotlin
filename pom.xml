@@ -19,6 +19,8 @@
 
     <modules>
         <module>coin-iass</module>
+        <module>coin-common</module>
+        <module>coin-admin</module>
     </modules>
 
 
@@ -49,8 +51,11 @@
         <okhttp.version>3.11.0</okhttp.version>
         <okio.version>1.15.0</okio.version>
         <hutool.version>5.1.1</hutool.version>
+        <kotlin.logging.version>2.1.21</kotlin.logging.version>
+        <jackson.module.kotlin.version>2.10.1</jackson.module.kotlin.version>
     </properties>
     <dependencies>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -73,13 +78,14 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
-            <version>${kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test</artifactId>
-            <version>${kotlin.version}</version>
-            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.microutils</groupId>
+            <artifactId>kotlin-logging-jvm</artifactId>
         </dependency>
     </dependencies>
 
@@ -222,6 +228,28 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk8</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-test</artifactId>
+                <version>${kotlin.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.github.microutils</groupId>
+                <artifactId>kotlin-logging-jvm</artifactId>
+                <version>${kotlin.logging.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-kotlin</artifactId>
+                <version>${jackson.module.kotlin.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
